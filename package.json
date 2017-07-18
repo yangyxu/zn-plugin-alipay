@@ -1,0 +1,33 @@
+{
+  "name": "zn-plugin-alipay",
+  "version": "0.1.1",
+  "description": "前端基于zeanium-react-web框架, 后端基于zeanium-node框架的支付宝支付插件",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel ./web/src -d ./web/build",
+    "dist": "webpack",
+    "release": "npm run build & npm run dist",
+    "install.release": "npm install --production",
+    "install.dev": "npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yangyxu/zn-plugin-alipay.git"
+  },
+  "keywords": [
+    "plugin",
+    "zn",
+    "zn-plugin",
+    "alipay",
+    "payment"
+  ],
+  "author": "yangyxu",
+  "license": "MIT",
+  "devDependencies": {
+    "zeanium-react-web": "^0.1.22"
+  },
+  "dependencies": {
+    "request": "^2.81.0",
+    "xml2js": "^0.4.17"
+  }
+}
