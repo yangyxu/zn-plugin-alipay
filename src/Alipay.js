@@ -35,12 +35,12 @@ zn.define([
                     _values = {};
                     zn.each(_base, function (value, key){
                         _value = value.value;
+                        if(params[key] != null){
+                            _value = params[key];
+                        }
                         if(_value != null || value.required){
                             if(typeof _value == 'function'){
                                 _value = _value.call();
-                            }
-                            if(params[key] != null){
-                                _value = params[key];
                             }
                             _values[key] = _value;
                         }

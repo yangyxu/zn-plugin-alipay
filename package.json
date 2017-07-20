@@ -1,6 +1,6 @@
 {
   "name": "zn-plugin-alipay",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "前端基于zeanium-react-web框架, 后端基于zeanium-node框架的支付宝支付插件",
   "main": "index.js",
   "scripts": {
