@@ -19,6 +19,32 @@ zn.define([
                         total_amount: 0.01
                     }));
                 }
+            },
+            testGetRefund: {
+                method: 'GET/POST',
+                value: function (request, response, chain){
+                    response.success(zn.alipay.getMethodURL('alipay.trade.refund', {
+                        out_trade_no: '2501501813633892',
+                        trade_no: '2017073121001004380270461631',
+                        refund_reason: '退货',
+                        refund_amount: 0.01
+                    }));
+                }
+            },
+            testCallRefund: {
+                method: 'GET/POST',
+                value: function (request, response, chain){
+                    zn.alipay.callGetMethod('alipay.trade.refund', {
+                        out_trade_no: '2501239330378898',
+                        trade_no: '2017072921001004380265517107',
+                        refund_reason: '退货',
+                        refund_amount: 0.01
+                    }).then(function (data){
+                        response.success(data);
+                    }, function (err){
+                        response.error(err);
+                    });
+                }
             }
         }
     });

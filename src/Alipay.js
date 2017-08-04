@@ -24,7 +24,7 @@ zn.define([
                     //this._config.merchant_private_key = this._config.merchant_private_key.replace(/[\r\n]/g,"");
                 }
             },
-            getMethodDefaultParams: function (method, params){
+            getMethodDefaultParams: function (method, params, encode){
                 var _base = api.base,
                     _defaultParams = api[method],
                     _params = {},
@@ -61,7 +61,8 @@ zn.define([
                     });
 
                     _values.biz_content = JSON.stringify(_params);
-                    _values.sign = encodeURIComponent(this.createSignatureWithRSA(this.stringify(_values), _values.sign_type, _values.charset));
+                    var _sign = this.createSignatureWithRSA(this.stringify(_values), _values.sign_type, _values.charset);
+                    _values.sign = encode!==false?encodeURIComponent(_sign):_sign;
                 }
 
                 return _values;
@@ -79,7 +80,7 @@ zn.define([
                 }else {
                     node_request({
                         url: this.config.gateway,
-                        qs: this.getMethodDefaultParams(method, params),
+                        qs: this.getMethodDefaultParams(method, params, false),
                         method: 'GET',
                         encoding: 'utf-8',
                         gzip: true
