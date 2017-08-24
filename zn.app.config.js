@@ -1,5 +1,5 @@
 zn.define({
-    deploy: 'znalipay',
+    deploy: 'zn.plugin.alipay',
     models: '/src/model/',
     controllers: '/src/controller/',
     alipay: {

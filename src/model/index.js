@@ -1,4 +1,3 @@
 zn.define([
-    './AlipayConfig',
     './AlipayLog'
 ]);

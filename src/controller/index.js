@@ -1,3 +1,3 @@
 zn.define([
-    './Alipay'
+    './Pay'
 ]);
